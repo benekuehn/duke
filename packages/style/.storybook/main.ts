@@ -32,7 +32,6 @@ const config: StorybookConfig = {
     config.plugins = config.plugins || [];
     config.plugins.push(
       new StylexPlugin({
-        filename: "styles.css",
         // get webpack mode and set value for dev
         dev: config.mode === "development",
         // Required for CSS variable support
