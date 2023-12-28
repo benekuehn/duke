@@ -1,4 +1,5 @@
 import type { StorybookConfig } from "@storybook/react-webpack5";
+import StylexPlugin from "@stylexjs/webpack-plugin";
 
 import { join, dirname } from "path";
 
@@ -19,14 +20,34 @@ const config: StorybookConfig = {
   ],
   framework: {
     name: getAbsolutePath("@storybook/react-webpack5"),
-    options: {
-      builder: {
-        useSWC: true,
-      },
-    },
+    options: {},
   },
   docs: {
     autodocs: "tag",
+  },
+  webpackFinal: async (config) => {
+    config.module = config.module || {};
+    config.module.rules = config.module.rules || [];
+
+    config.plugins = config.plugins || [];
+    config.plugins.push(
+      new StylexPlugin({
+        filename: "styles.css",
+        // get webpack mode and set value for dev
+        dev: config.mode === "development",
+        // Required for CSS variable support
+        appendTo: "head",
+        unstable_moduleResolution: {
+          // The module system to be used.
+          // Use this value when using `ESModules`.
+          type: "commonJS",
+          // The absolute path to the root directory of your project.
+          rootDir: __dirname,
+        },
+      }),
+    );
+
+    return config;
   },
 };
 export default config;

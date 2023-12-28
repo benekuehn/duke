@@ -1,9 +1,19 @@
 import React from 'react';
 import * as stylex from '@stylexjs/stylex';
-import styles from './button.module.css'
+
+const styles = stylex.create({
+    button: {
+        backgroundColor: 'blue',
+        border: '1px solid #ddd',
+        borderRadius: 4,
+        color: '#333',
+        fontSize: 16,
+        padding: '3px 10px',
+    },
+});
 
 export const Button = () => {
     return (
-        <button className={styles.button}>Button</button>
+        <button {...stylex.props(styles.button)}>Button</button>
     )
 }
