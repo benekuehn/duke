@@ -1,3 +1,32 @@
 .button {
-    background-color: aqua;
+    all: unset;
+    display: inline-flex;
+    padding: 8px 16px;
+    align-items: center;
+    gap: 30px;
+    border-radius: 4px;
+    background: var(--Duke-100, #0007B0);
+    color: var(--Snow-100, #E5E5F0);
+    font-family: Geist, sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.button:hover {
+    color: var(--Snow-80, #B7B7C3);
+    background: var(--Duke-80, #000690);
+    cursor: pointer;
+}
+
+.button:active {
+    background: var(--Duke-40, #000350);
+    color: var(--Snow-40, #5C5C6A);
+}
+
+.button:disabled {
+    background: var(--Duke-40, #000350);
+    color: var(--Snow-20, #2E2F3D);
+    cursor: not-allowed;
 }
