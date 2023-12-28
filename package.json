@@ -14,9 +14,8 @@
     "turbo": "latest"
   },
   "engines": {
-    "node": ">=18"
+    "node": ">=20"
   },
-  "packageManager": "bun@1.0.18",
   "workspaces": [
     "apps/*",
     "packages/*"

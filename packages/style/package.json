@@ -1,0 +1,35 @@
+{
+  "name": "@repo/style",
+  "version": "0.0.0",
+  "private": true,
+  "exports": {},
+  "scripts": {
+    "lint": "eslint . --max-warnings 0",
+    "generate:component": "turbo gen react-component",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
+  "devDependencies": {
+    "@repo/eslint-config": "*",
+    "@repo/typescript-config": "*",
+    "@storybook/addon-essentials": "^7.6.6",
+    "@storybook/addon-interactions": "^7.6.6",
+    "@storybook/addon-links": "^7.6.6",
+    "@storybook/addon-onboarding": "^1.0.10",
+    "@storybook/blocks": "^7.6.6",
+    "@storybook/react": "^7.6.6",
+    "@storybook/react-webpack5": "^7.6.6",
+    "@storybook/test": "^7.6.6",
+    "@turbo/gen": "^1.10.12",
+    "@types/eslint": "^8.44.7",
+    "@types/node": "^20.5.2",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "eslint": "^8.53.0",
+    "eslint-plugin-storybook": "^0.6.15",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "storybook": "^7.6.6",
+    "typescript": "^5.2.2"
+  }
+}
