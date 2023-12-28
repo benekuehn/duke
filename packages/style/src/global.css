@@ -1,6 +1,1 @@
-@font-face {
-    font-family: 'Geist Sans';
-    font-style: regular;
-    font-display: swap;
-    src: url('https://github.com/vercel/geist-font/raw/f664551a2ea5a4d26477db312b84f735a089e372/packages/next/dist/fonts/geist-sans/Geist-Regular.woff2') format('woff2');
-}
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
