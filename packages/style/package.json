@@ -2,7 +2,9 @@
   "name": "@repo/style",
   "version": "0.0.1",
   "private": true,
-  "exports": {},
+  "exports": {
+    "./button": "./src/button"
+  },
   "scripts": {
     "lint": "eslint . --max-warnings 0",
     "generate:component": "turbo gen react-component",
