@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react';
 import * as stylex from '@stylexjs/stylex';
-import { ButtonProps } from './button.types';
+import { ButtonProps, ButtonVariant } from './button.types';
 import "../global.css";
 
 const styles = stylex.create({
@@ -8,18 +8,8 @@ const styles = stylex.create({
         display: 'inline-flex',
         padding: '8px 16px',
         alignItems: 'center',
-        gap: '30px',
+        gap: '8px',
         borderRadius: '4px',
-        background: {
-            default: '#0007B0',
-            ':hover': '#000690',
-            ':active': '#000350',
-        },
-        color: {
-            default: '#E5E5F0',
-            ':hover': '#B7B7C3',
-            ':active': '#5C5C6A',
-        },
         fontFamily: "'Inter', sans-serif",
         fontSize: '14px',
         fontStyle: 'normal',
@@ -27,6 +17,11 @@ const styles = stylex.create({
         lineHeight: 'normal',
         border: 'none',
         cursor: 'pointer',
+        color: {
+            default: '#E5E5F0',
+            ':hover': '#B7B7C3',
+            ':active': '#5C5C6A',
+        },
     },
     disabled: {
         color: '#2E2F3D',
@@ -35,9 +30,46 @@ const styles = stylex.create({
     },
 });
 
-export const Button: FunctionComponent<ButtonProps> = ({ children, isDisabled = false }) => {
+const variants = stylex.create({
+    primary: {
+        background: {
+            default: '#0007B0',
+            ':hover': '#000690',
+            ':active': '#000350',
+        },
+    },
+    secondary: {
+        background: {
+            default: '#2E2F3D',
+            ':hover': '#171826',
+            ':active': 'transparent',
+        },
+
+    },
+    outline: {
+        background: {
+            default: 'transparent',
+            ':hover': '#000690',
+            ':active': '#000350',
+        },
+        border: {
+            default: '2px solid #0007B0',
+            ':hover': '2px solid #000690',
+            ':active': '2px solid #000350',
+        },
+    },
+    ghost: {
+        background: {
+            default: 'transparent',
+            ':hover': '#000350',
+            ':active': '#000230',
+        },
+    },
+});
+
+export const Button: FunctionComponent<ButtonProps> = ({ children, variant = ButtonVariant.PRIMARY, isDisabled = false }) => {
 
     return (
-        <button {...stylex.props(styles.button, isDisabled && styles.disabled)}>{children}</button>
+        <button {...stylex.props(styles.button, variants[variant], isDisabled && styles.disabled)}>{children}</button>
     )
 }

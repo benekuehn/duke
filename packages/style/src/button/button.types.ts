@@ -1,7 +1,7 @@
 export enum ButtonVariant {
     PRIMARY = "primary",
     SECONDARY = "secondary",
-    DESTRUCTIVE = "destructive",
+    // DESTRUCTIVE = "destructive",
     OUTLINE = "outline",
     GHOST = "ghost",
 }
