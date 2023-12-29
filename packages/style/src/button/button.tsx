@@ -20,7 +20,7 @@ const styles = stylex.create({
             ':hover': '#B7B7C3',
             ':active': '#5C5C6A',
         },
-        fontFamily: 'Roboto',
+        fontFamily: "'Inter', sans-serif",
         fontSize: '14px',
         fontStyle: 'normal',
         fontWeight: 500,
@@ -38,6 +38,6 @@ const styles = stylex.create({
 export const Button: FunctionComponent<ButtonProps> = ({ children, isDisabled = false }) => {
 
     return (
-        <button {...stylex.props(styles.button, isDisabled && styles.disabled)}>Button text</button>
+        <button {...stylex.props(styles.button, isDisabled && styles.disabled)}>{children}</button>
     )
 }
