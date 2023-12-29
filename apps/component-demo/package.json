@@ -17,11 +17,11 @@
     },
     "devDependencies": {
         "@stylexjs/nextjs-plugin": "0.4.1",
-        "@types/eslint": "8.44.7",
+        "@types/eslint": "8.56.0",
         "@types/node": "20.10.5",
         "@types/react": "18.0.22",
         "@types/react-dom": "18.2.18",
-        "eslint": "8.53.0",
+        "eslint": "8.56.0",
         "typescript": "5.3.3"
     }
 }
