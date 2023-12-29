@@ -1,28 +1,28 @@
 {
-  "name": "duke",
-  "private": true,
-  "scripts": {
-    "build": "turbo build",
-    "dev": "turbo dev",
-    "lint": "turbo lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
-  },
-  "devDependencies": {
-    "@repo/eslint-config": "*",
-    "@repo/typescript-config": "*",
-    "prettier": "3.1.0",
-    "turbo": "latest"
-  },
-  "engines": {
-    "node": ">=20"
-  },
-  "workspaces": [
-    "apps/*",
-    "packages/*"
-  ],
-  "dependencies": {
-    "@stylexjs/eslint-plugin": "0.4.1",
-    "@stylexjs/stylex": "0.4.1",
-    "@stylexjs/webpack-plugin": "0.4.1"
-  }
+    "name": "duke",
+    "private": true,
+    "scripts": {
+        "build": "turbo build",
+        "dev": "turbo dev",
+        "lint": "turbo lint",
+        "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    },
+    "engines": {
+        "bun": ">=1"
+    },
+    "workspaces": [
+        "apps/*",
+        "packages/*"
+    ],
+    "dependencies": {
+        "@stylexjs/eslint-plugin": "0.4.1",
+        "@stylexjs/stylex": "0.4.1",
+        "@stylexjs/webpack-plugin": "0.4.1"
+    },
+    "devDependencies": {
+        "@repo/eslint-config": "*",
+        "@repo/typescript-config": "*",
+        "prettier": "^3.1.1",
+        "turbo": "1.11.2"
+    }
 }

@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from 'react';
 import * as stylex from '@stylexjs/stylex';
 import { ButtonProps, ButtonVariant } from './button.types';
-import "../global.css";
+import '../global.css';
 
 const styles = stylex.create({
     button: {
@@ -44,7 +44,6 @@ const variants = stylex.create({
             ':hover': '#171826',
             ':active': 'transparent',
         },
-
     },
     outline: {
         background: {
@@ -67,9 +66,14 @@ const variants = stylex.create({
     },
 });
 
-export const Button: FunctionComponent<ButtonProps> = ({ children, variant = ButtonVariant.PRIMARY, isDisabled = false }) => {
-
+export const Button: FunctionComponent<ButtonProps> = ({
+    children,
+    variant = ButtonVariant.PRIMARY,
+    isDisabled = false,
+}) => {
     return (
-        <button {...stylex.props(styles.button, variants[variant], isDisabled && styles.disabled)}>{children}</button>
-    )
-}
+        <button {...stylex.props(styles.button, variants[variant], isDisabled && styles.disabled)}>
+            {children}
+        </button>
+    );
+};

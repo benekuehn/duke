@@ -5,8 +5,8 @@
     align-items: center;
     gap: 30px;
     border-radius: 4px;
-    background: var(--Duke-100, #0007B0);
-    color: var(--Snow-100, #E5E5F0);
+    background: var(--Duke-100, #0007b0);
+    color: var(--Snow-100, #e5e5f0);
     font-family: Geist, sans-serif;
     font-size: 14px;
     font-style: normal;
@@ -15,18 +15,18 @@
 }
 
 .button:hover {
-    color: var(--Snow-80, #B7B7C3);
+    color: var(--Snow-80, #b7b7c3);
     background: var(--Duke-80, #000690);
     cursor: pointer;
 }
 
 .button:active {
     background: var(--Duke-40, #000350);
-    color: var(--Snow-40, #5C5C6A);
+    color: var(--Snow-40, #5c5c6a);
 }
 
 .button:disabled {
     background: var(--Duke-40, #000350);
-    color: var(--Snow-20, #2E2F3D);
+    color: var(--Snow-20, #2e2f3d);
     cursor: not-allowed;
 }
