@@ -21,8 +21,8 @@
     "packages/*"
   ],
   "dependencies": {
-    "@stylexjs/eslint-plugin": "^0.3.0",
-    "@stylexjs/stylex": "^0.3.0",
-    "@stylexjs/webpack-plugin": "^0.3.0"
+    "@stylexjs/eslint-plugin": "0.4.1",
+    "@stylexjs/stylex": "0.4.1",
+    "@stylexjs/webpack-plugin": "0.4.1"
   }
 }

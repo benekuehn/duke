@@ -1,6 +1,5 @@
 import React, { FunctionComponent } from 'react';
 import * as stylex from '@stylexjs/stylex';
-import { fonts } from '../tokens.stylex'
 import { ButtonProps } from './button.types';
 import "../global.css";
 
@@ -21,7 +20,7 @@ const styles = stylex.create({
             ':hover': '#B7B7C3',
             ':active': '#5C5C6A',
         },
-        fontFamily: fonts.fontFamily,
+        fontFamily: 'Roboto',
         fontSize: '14px',
         fontStyle: 'normal',
         fontWeight: 500,
