@@ -1,0 +1,208 @@
+{
+    "extends": [
+        "airbnb",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:storybook/recommended",
+        "plugin:prettier/recommended",
+        "@repo/eslint-config/react-internal.js"
+    ],
+    "parserOptions": {
+        "project": "./tsconfig.lint.json" // Allows for the use of imports
+    },
+    "parser": "@typescript-eslint/parser",
+    "rules": {
+        "func-names": "error",
+        "complexity": ["warn", 15],
+        "camelcase": "off",
+        "curly": "error",
+        "import/extensions": [
+            "error",
+            "ignorePackages",
+            {
+                "js": "never",
+                "jsx": "never",
+                "ts": "never",
+                "tsx": "never"
+            }
+        ],
+        "import/order": [
+            "error",
+            {
+                "groups": ["builtin", "external", "internal"],
+                "pathGroups": [
+                    {
+                        "pattern": "react",
+                        "group": "external",
+                        "position": "before"
+                    }
+                ],
+                "pathGroupsExcludedImportTypes": ["react"],
+                "newlines-between": "always",
+                "alphabetize": {
+                    "order": "asc",
+                    "caseInsensitive": true
+                }
+            }
+        ],
+        "jsx-a11y/anchor-is-valid": [
+            "error",
+            {
+                "components": ["Link"],
+                "specialLink": ["hrefLeft", "hrefRight"],
+                "aspects": ["invalidHref", "preferButton"]
+            }
+        ],
+        "import/prefer-default-export": "off",
+        "import/no-anonymous-default-export": ["error"],
+        "no-restricted-imports": [
+            "error",
+            {
+                "paths": [
+                    {
+                        "name": "lodash",
+                        "message": "Please import component or functionality directly"
+                    }
+                ]
+            }
+        ],
+        "prettier/prettier": "error",
+        "consistent-return": "off",
+        "react/boolean-prop-naming": [
+            "error",
+            { "rule": "^(is|has|should)[A-Z]([A-Za-z0-9]?)+|^disabled$|^checked$" }
+        ],
+        "react/jsx-uses-react": "off",
+        "react/react-in-jsx-scope": "off",
+        "react/jsx-props-no-spreading": "off",
+        "react/no-array-index-key": "warn",
+        "react/prop-types": "off",
+        "react/jsx-key": "error",
+        "react/default-props-match-prop-types": "off",
+        "react/require-default-props": "off",
+        "react/jsx-no-duplicate-props": ["error", { "ignoreCase": false }],
+        "react/no-did-mount-set-state": "off",
+        "react/jsx-filename-extension": [
+            1,
+            {
+                "extensions": [".js", ".tsx"]
+            }
+        ],
+        "react/function-component-definition": [
+            "error",
+            {
+                "namedComponents": "arrow-function",
+                "unnamedComponents": "arrow-function"
+            }
+        ],
+        "import/no-extraneous-dependencies": [
+            "warn",
+            {
+                "devDependencies": [
+                    "**/*.stories.{js,ts,tsx}",
+                    "**/*.test.js",
+                    "**/*.test.ts",
+                    "**/*.test.tsx",
+                    "jest*.js",
+                    "deploy.js",
+                    "e2e_tests/**/*.js",
+                    "test-utils/**/*.js",
+                    "next.config.js"
+                ]
+            }
+        ],
+        // Special rules from https://github.com/typescript-eslint/typescript-eslint/issues/1856
+        "no-use-before-define": "off",
+        "@typescript-eslint/no-use-before-define": "error",
+        "no-shadow": "off",
+        "@typescript-eslint/no-shadow": "error",
+        "no-unused-vars": "off",
+        "@typescript-eslint/no-unused-vars": "error",
+        "no-redeclare": "off",
+        "@typescript-eslint/no-redeclare": "error",
+        // Special rules end
+        "@typescript-eslint/no-var-requires": "off",
+        "@typescript-eslint/no-explicit-any": "off",
+        "@typescript-eslint/no-non-null-assertion": "off",
+        "react-hooks/exhaustive-deps": "off",
+        "@typescript-eslint/explicit-module-boundary-types": "off",
+        "@typescript-eslint/explicit-function-return-type": "off",
+        "@typescript-eslint/no-empty-function": "off",
+        "no-unused-expressions": "warn",
+        "padding-line-between-statements": [
+            "error",
+            { "blankLine": "always", "prev": "*", "next": "return" },
+            { "blankLine": "always", "prev": "block-like", "next": "block-like" }
+        ],
+        "no-only-tests/no-only-tests": "error",
+        "testing-library/no-node-access": "off"
+    },
+    "plugins": [
+        "react",
+        "prettier",
+        "import",
+        "@typescript-eslint",
+        "react-hooks",
+        "cypress",
+        "jsx-a11y",
+        "@stylexjs",
+        "no-only-tests"
+    ],
+    "env": {
+        "browser": true,
+        "jest": true
+    },
+    "overrides": [
+        {
+            "files": ["*.test.js"],
+            "rules": {
+                "global-require": 0,
+                "no-underscore-dangle": 0
+            }
+        },
+        {
+            "files": ["*.stories.{js,ts,tsx}"],
+            "rules": {
+                "import/no-anonymous-default-export": ["error", { "allowObject": true }]
+            }
+        },
+        {
+            "files": ["*.js", "*.jsx"],
+            "rules": {
+                "no-undef": "error" // only needed in JS files, as TS will check this on its own
+            }
+        },
+        {
+            "files": ["*.js"],
+            "rules": {
+                "@typescript-eslint/explicit-function-return-type": 0
+            }
+        },
+        {
+            "files": ["e2e-tests/**/*.js"],
+            "extends": ["plugin:cypress/recommended"],
+            "rules": {
+                "import/no-unresolved": "off"
+            }
+        },
+        {
+            "files": ["src/server/**/*.js", "e2e-tests/**/*.js"],
+            "rules": {
+                "no-console": "off"
+            }
+        }
+    ],
+    "settings": {
+        "react": {
+            "version": "detect"
+        },
+        "import/resolver": {
+            "typescript": {
+                "project": "."
+            },
+            "node": {
+                "extensions": [".js", ".jsx", ".ts", ".tsx", ".json"]
+            }
+        },
+        "testing-library/utils-module": "test-utils"
+    }
+}

@@ -1,5 +1,7 @@
 import React, { FunctionComponent } from 'react';
+
 import * as stylex from '@stylexjs/stylex';
+
 import { ButtonProps, ButtonVariant } from './button.types';
 import '../global.css';
 
@@ -72,7 +74,10 @@ export const Button: FunctionComponent<ButtonProps> = ({
     isDisabled = false,
 }) => {
     return (
-        <button {...stylex.props(styles.button, variants[variant], isDisabled && styles.disabled)}>
+        <button
+            type="button"
+            {...stylex.props(styles.button, variants[variant], isDisabled && styles.disabled)}
+        >
             {children}
         </button>
     );
