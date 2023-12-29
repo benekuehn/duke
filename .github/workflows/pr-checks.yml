@@ -7,4 +7,4 @@ jobs:
     typecheck:
         runs-on: ubuntu-latest
         steps:
-            - run: echo "Running typecheck"
+            - run: bun run lint
