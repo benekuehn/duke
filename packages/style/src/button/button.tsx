@@ -2,7 +2,6 @@ import React, { FunctionComponent } from 'react';
 
 import * as stylex from '@stylexjs/stylex';
 
-import { ButtonProps, ButtonVariant } from './button.types';
 import '../global.css';
 
 const styles = stylex.create({
@@ -68,9 +67,16 @@ const variants = stylex.create({
     },
 });
 
+export type ButtonProps = {
+    children: React.ReactNode;
+    variant: keyof typeof variants;
+    size?: 'icon';
+    isDisabled?: boolean;
+};
+
 export const Button: FunctionComponent<ButtonProps> = ({
     children,
-    variant = ButtonVariant.PRIMARY,
+    variant = "primary",
     isDisabled = false,
 }) => {
     return (
