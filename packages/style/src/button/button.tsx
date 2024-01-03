@@ -4,6 +4,8 @@ import * as stylex from '@stylexjs/stylex';
 
 import '../global.css';
 
+// TODO use defineVars API once thats working with Next
+
 const styles = stylex.create({
     button: {
         display: 'inline-flex',
@@ -19,14 +21,14 @@ const styles = stylex.create({
         border: 'none',
         cursor: 'pointer',
         color: {
-            default: '#E5E5F0',
-            ':hover': '#B7B7C3',
-            ':active': '#5C5C6A',
+            default: 'var(--light-500)',
+            ':hover': 'var(--grey-100)',
+            ':active': 'var(--grey-300)',
         },
     },
     disabled: {
-        color: '#2E2F3D',
-        background: '#000350',
+        color: 'var(--grey-500)',
+        background: 'var(--primary-900)',
         cursor: 'not-allowed',
     },
 });
@@ -34,15 +36,15 @@ const styles = stylex.create({
 const variants = stylex.create({
     primary: {
         background: {
-            default: '#0007B0',
-            ':hover': '#000690',
-            ':active': '#000350',
+            default: 'var(--primary-500)',
+            ':hover': 'var(--primary-700)',
+            ':active': 'var(--primary-900)',
         },
     },
     secondary: {
         background: {
-            default: '#2E2F3D',
-            ':hover': '#171826',
+            default: 'var(--grey-700)',
+            ':hover': 'var(--grey-900)',
             ':active': 'transparent',
         },
     },
@@ -53,38 +55,37 @@ const variants = stylex.create({
             ':active': '#000350',
         },
         border: {
-            default: '2px solid #0007B0',
-            ':hover': '2px solid #000690',
-            ':active': '2px solid #000350',
+            default: '2px solid var(--primary-500)',
+            ':hover': '2px solid var(--primary-700)',
+            ':active': '2px solid var(--primary-900)',
         },
     },
     ghost: {
         background: {
             default: 'transparent',
-            ':hover': '#000350',
-            ':active': '#000230',
+            ':hover': 'var(--primary-700)',
+            ':active': 'var(--primary-900)',
         },
     },
 });
 
 export type ButtonProps = {
-    children: React.ReactNode;
     variant: keyof typeof variants;
     size?: 'icon';
     isDisabled?: boolean;
 } & ButtonHTMLAttributes<HTMLButtonElement>;
 
 export const Button: FunctionComponent<ButtonProps> = ({
-    children,
-    variant = "primary",
+    variant = 'primary',
     isDisabled = false,
+    ...props
 }) => {
     return (
         <button
             type="button"
             {...stylex.props(styles.button, variants[variant], isDisabled && styles.disabled)}
-        >
-            {children}
-        </button>
+            disabled
+            {...props}
+        />
     );
 };

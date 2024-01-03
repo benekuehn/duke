@@ -1,1 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+    --primary-100: #b7b9e3;
+    --primary-300: #5c60ca;
+    --primary-500: #0007b0;
+    --primary-700: #000570;
+    --primary-900: #000230;
+    --light-500: #e5e5f0;
+    --dark-500: #000110;
+    --grey-100: #b7b7c3;
+    --grey-300: #898a96;
+    --grey-500: #5c5c6a;
+    --grey-700: #2e2f3d;
+    --grey-900: #171826;
+}
