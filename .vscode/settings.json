@@ -1,4 +1,5 @@
 {
     "editor.formatOnSave": true,
-    "editor.formatOnPaste": true
+    "editor.formatOnPaste": true,
+    "eslint.workingDirectories": ["apps/component-demo", "packages/style"]
 }
