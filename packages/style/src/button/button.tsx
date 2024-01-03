@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react';
+import React, { ButtonHTMLAttributes, FunctionComponent } from 'react';
 
 import * as stylex from '@stylexjs/stylex';
 
@@ -72,7 +72,7 @@ export type ButtonProps = {
     variant: keyof typeof variants;
     size?: 'icon';
     isDisabled?: boolean;
-};
+} & ButtonHTMLAttributes<HTMLButtonElement>;
 
 export const Button: FunctionComponent<ButtonProps> = ({
     children,
