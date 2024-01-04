@@ -1,12 +1,12 @@
 import React from 'react';
 
-import { Button } from '.';
+import { Button } from './button';
 
 export default {
     title: 'Button',
     component: Button,
 };
 
-export function Primary() {
-    return <Button />;
-}
+export const Primary = () => {
+    return <Button>Test Button</Button>;
+};

@@ -9,7 +9,8 @@
         "lint": "eslint . --max-warnings 10",
         "generate:component": "turbo gen react-component",
         "storybook": "storybook dev -p 6006",
-        "build-storybook": "storybook build"
+        "build-storybook": "storybook build",
+        "test-storybook:ci": "concurrently -k -s first -n \"SB,TEST\" -c \"magenta,blue\" \"bun build-storybook --quiet && npx http-server storybook-static --port 6006 --silent\" \"wait-on tcp:6006 && bun test-storybook\""
     },
     "dependencies": {
         "react": "18.2.0",
