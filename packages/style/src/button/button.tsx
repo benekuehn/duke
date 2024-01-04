@@ -14,7 +14,7 @@ const styles = stylex.create({
         gap: '8px',
         borderRadius: '4px',
         fontFamily: "'Inter', sans-serif",
-        fontSize: '0.87rem',
+        fontSize: '0.875rem',
         fontStyle: 'normal',
         fontWeight: 500,
         lineHeight: 'normal',
