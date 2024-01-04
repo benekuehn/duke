@@ -14,7 +14,7 @@ const styles = stylex.create({
         gap: '8px',
         borderRadius: '4px',
         fontFamily: "'Inter', sans-serif",
-        fontSize: '0.87rem',
+        fontSize: '0.875rem',
         fontStyle: 'normal',
         fontWeight: 500,
         lineHeight: 'normal',
@@ -30,6 +30,9 @@ const styles = stylex.create({
         color: 'var(--grey-500)',
         background: 'var(--primary-900)',
         cursor: 'not-allowed',
+    },
+    icon: {
+        padding: '8px',
     },
 });
 
@@ -78,12 +81,18 @@ export type ButtonProps = {
 export const Button: FunctionComponent<ButtonProps> = ({
     variant = 'primary',
     isDisabled = false,
+    size,
     ...props
 }) => {
     return (
         <button
             type="button"
-            {...stylex.props(styles.button, variants[variant], isDisabled && styles.disabled)}
+            {...stylex.props(
+                styles.button,
+                variants[variant],
+                isDisabled && styles.disabled,
+                !!size && styles.icon,
+            )}
             disabled
             {...props}
         />
