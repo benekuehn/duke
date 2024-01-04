@@ -36,6 +36,7 @@ export const Ghost = {
 
 export const Icon = {
     args: {
+        arriaLabel: 'Test Button',
         size: 'icon',
         children: <CubeIcon />,
     },
