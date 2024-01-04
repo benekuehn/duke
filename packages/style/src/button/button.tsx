@@ -14,7 +14,7 @@ const styles = stylex.create({
         gap: '8px',
         borderRadius: '4px',
         fontFamily: "'Inter', sans-serif",
-        fontSize: '14px',
+        fontSize: '0,875 rem',
         fontStyle: 'normal',
         fontWeight: 500,
         lineHeight: 'normal',
@@ -70,7 +70,7 @@ const variants = stylex.create({
 });
 
 export type ButtonProps = {
-    variant: keyof typeof variants;
+    variant?: keyof typeof variants;
     size?: 'icon';
     isDisabled?: boolean;
 } & ButtonHTMLAttributes<HTMLButtonElement>;
