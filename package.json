@@ -18,6 +18,7 @@
     "@stylexjs/eslint-plugin": "0.4.1",
     "@stylexjs/stylex": "0.4.1",
     "@stylexjs/webpack-plugin": "0.4.1",
+    "concurrently": "^8.2.2",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-next": "^14.0.4",
     "eslint-plugin-cypress": "latest",
