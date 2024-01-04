@@ -1,7 +1,7 @@
 on:
     push:
-        branches:
-            - master/packages/style
+        paths:
+            - packages/style/**
 
 jobs:
     a11y:
